@@ -1,4 +1,5 @@
-import { Category, ICategoryDTO } from "../model/Categories";
+import { Category, ICategoryDTO } from "../../model/Categories"
+
 
 interface ICategoriesBussines {
     findCategoryByName(name: string): Category | undefined

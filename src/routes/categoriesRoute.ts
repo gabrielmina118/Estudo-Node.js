@@ -1,10 +1,12 @@
-import { Request, Response, Router } from "express";
-import CategoryController from "../Controllers/CategoryController";
-
+import { Router } from "express";
+import { categoryController } from "../modules/Cars/useCases/category";
 
 export const categoriesRoute = Router();
-
-categoriesRoute.post("/categories", CategoryController.createCategory)
-categoriesRoute.get("/categories", CategoryController.listCategory)
+categoriesRoute.post("/categories",(request,response)=>{
+    return categoryController.createCategory(request,response)
+})
+categoriesRoute.get("/categories", (request,response)=>{
+    return categoryController.listCategory(request,response)
+})
 
 
